@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkq1kvp5jkm67"]
+
+[ext_resource type="Script" path="res://global/scenes/scripts/console.gd" id="1_kmr8y"]
+[ext_resource type="FontFile" uid="uid://d1atdaxs11fl3" path="res://assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf" id="2_q0sda"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctr5y"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s24rn"]
+bg_color = Color(0.212305, 0.212305, 0.212305, 1)
+
+[node name="Console" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_kmr8y")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 998
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ctr5y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 999
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Output" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_q0sda")
+bbcode_enabled = true
+scroll_following = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Input" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+z_index = 999
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_s24rn")
+
+[node name="CloseOnCommand" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Close on command success"

@@ -1,0 +1,20 @@
+extends Node
+
+enum LayerType {
+	BOUNDARY,
+	WORLD,
+	PLATFORM,
+	PLAYER,
+	PLAYER_PROJECTILE,
+	PLAYER_TRIGGER,
+	ENEMY,
+	ENEMY_PROJECTILE,
+	ENEMY_TRIGGER
+}
+
+enum DamageType {
+	NORMAL,
+	SPELL,
+	CRITICAL,
+	HEAL,
+}
