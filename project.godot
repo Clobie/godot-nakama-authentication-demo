@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="game"
+config/name="Godot 4 Nakama Wrapper"
 run/main_scene="res://ui.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
